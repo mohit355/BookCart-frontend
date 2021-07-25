@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { getProducts } from "./apiCore";
 import Card from "./Card";
+import Search from "./Search";
 
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);
@@ -39,6 +40,7 @@ const Home = () => {
       description="Node React Ecommerce App"
       className="container"
     >
+      <Search></Search>
       {/* {JSON.stringify(productByArrival)}
       <hr />
       {JSON.stringify(productsBySell)} */}
