@@ -41,20 +41,22 @@ const Home = () => {
       className="container"
     >
       <Search></Search>
-      {/* {JSON.stringify(productByArrival)}
-      <hr />
-      {JSON.stringify(productsBySell)} */}
+
       <h2 className="mb-4">Best Sellers</h2>
       <div className="row">
         {productsBySell.map((product, index) => (
-          <Card key={index} product={product}></Card>
+          <div key={index} className="col-4 mb-3">
+            <Card product={product}></Card>
+          </div>
         ))}
       </div>
 
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
         {productsByArrival.map((product, index) => (
-          <Card key={index} product={product}></Card>
+          <div key={index} className="col-4 mb-3">
+            <Card product={product}></Card>
+          </div>
         ))}
       </div>
     </Layout>

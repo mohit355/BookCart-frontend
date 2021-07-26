@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { getCategories } from "../admin/apiAdmin";
 import { list } from "./apiCore";
+import Card from "./Card";
 
 const Search = () => {
   const [data, setData] = useState({
     categories: [],
     category: "",
     search: "",
-    results: "",
+    results: [],
     searched: false,
   });
 
@@ -55,6 +56,26 @@ const Search = () => {
     searchData(search, category);
   };
 
+  const searchedProduct = (results = []) => {
+    return (
+      <div>
+        {searched && results.length > 0 ? (
+          <h5 className="mt-4 mb-4">{`Found ${results.length} products`}</h5>
+        ) : null}
+
+        {searched && results.length < 1 ? (
+          <h5 className="mt-4 mb-4">{"No product found"}</h5>
+        ) : null}
+
+        <div className="row">
+          {results.map((product, i) => (
+            <Card key={i} product={product}></Card>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   const searchForm = (
     <form onSubmit={searchSubmit}>
       <span className="input-group-text">
@@ -92,7 +113,7 @@ const Search = () => {
   return (
     <div className="row">
       <div className="container mb-3">{searchForm}</div>
-      <div className="container mb-3">{JSON.stringify(results)}</div>
+      <div className="container-fluid mb-3">{searchedProduct(results)}</div>
     </div>
   );
 };
