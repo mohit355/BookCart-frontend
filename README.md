@@ -1,32 +1,9 @@
-(npm start runs our react in development mode only)
-
-### How to host on Digital ocean
-
-##### 1. Create a simple Node Express server inside react app
-
-    1.1  create a file in react app named as - server.js
-    1.2 write down the following code so that we can server everything form index.html file that exist in build folder created after running npn run build
-    Code:
-
-    const express = require("express");
-
-    const compression = require("compression");
-    const path = require("path");
-
-    const app = express();
-
-    app.use(compression);
-    app.use(express.static(path.join(\_\_dirname, "build")));
-
-    app.get("\*", (req, res) => {
-    res.sendFile(path.join(\_\_dirname, "build", "index.html"));
-    });
-
-    const PORT = process.env.PORT || 3000;
-
-    app.listen(PORT, () => {
-    console.log(`App is running on port ${PORT}`);
-    });
+## [BookCart-frontend](https://github.com/mohit355/BookCart-frontend)
+This repo contains only frontend part of BookCart.
 
 
-    2. Push your code on github
+### What is [BookCart](https://bookcart-1.web.app/)
+
+ An Ecommerce website for buying and selling books with functionality of searching on the basis of books category and price and having integrated Payment gateway with paypal and card payment.Role based functionality like CRUDs for books,category, user profiles and purchase history. Admin has permission to confirm orders placed by users.
+ 
+ Wanna try live : [Click here](https://bookcart-1.web.app/)
