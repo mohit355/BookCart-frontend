@@ -1,1 +1,1 @@
-export const API = "http://immense-beyond-71136.herokuapp.com/api";
+export const API = "https://immense-beyond-71136.herokuapp.com/api";
