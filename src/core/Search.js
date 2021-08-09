@@ -68,9 +68,10 @@ const Search = () => {
         ) : null}
 
         <div className="row">
-          {results.map((product, i) => (
-            <Card key={i} product={product}></Card>
-          ))}
+          {results.length > 0 &&
+            results.map((product, i) => (
+              <Card key={i} product={product}></Card>
+            ))}
         </div>
       </div>
     );
@@ -88,11 +89,12 @@ const Search = () => {
               onChange={handleChange}
             >
               <option value="all">Pick category</option>
-              {categories.map((category, index) => (
-                <option key={index} value={category._id}>
-                  {category.name}
-                </option>
-              ))}
+              {categories.length > 0 &&
+                categories.map((category, index) => (
+                  <option key={index} value={category._id}>
+                    {category.name}
+                  </option>
+                ))}
             </select>
           </div>
           <input

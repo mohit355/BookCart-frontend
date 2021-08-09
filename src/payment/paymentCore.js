@@ -10,7 +10,7 @@ export const getBraintreeClientToken = (userId, token) => {
     },
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const processPayment = (userId, token, paymentData) => {

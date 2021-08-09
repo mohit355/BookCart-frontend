@@ -11,7 +11,7 @@ export const createCategory = (userId, token, category) => {
     body: JSON.stringify(category),
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const createProduct = (userId, token, product) => {
@@ -24,7 +24,7 @@ export const createProduct = (userId, token, product) => {
     body: product,
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const getCategories = () => {
@@ -32,7 +32,7 @@ export const getCategories = () => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const listOrders = (userId, token) => {
@@ -87,7 +87,7 @@ export const getProducts = () => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const getProduct = (productId) => {
@@ -95,7 +95,7 @@ export const getProduct = (productId) => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const updateProduct = (productId, userId, token, product) => {

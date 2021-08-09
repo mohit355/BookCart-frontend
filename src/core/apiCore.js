@@ -6,7 +6,7 @@ export const getProducts = (sortBy) => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const getCategories = () => {
@@ -14,7 +14,7 @@ export const getCategories = () => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const getFilteredProduct = (skip, limit, filters = {}) => {
@@ -35,7 +35,7 @@ export const getFilteredProduct = (skip, limit, filters = {}) => {
       console.log(response);
       return response.json();
     })
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const list = (params) => {
@@ -45,7 +45,7 @@ export const list = (params) => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const read = (productId) => {
@@ -53,7 +53,7 @@ export const read = (productId) => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
 export const listRelatedProduct = (productId) => {
@@ -61,5 +61,5 @@ export const listRelatedProduct = (productId) => {
     method: "GET",
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };

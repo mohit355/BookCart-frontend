@@ -14,9 +14,7 @@ export const userSignup = (user) => {
     .then((response) => {
       return response.json();
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => err);
 };
 
 export const userSignin = (user) => {
@@ -33,9 +31,7 @@ export const userSignin = (user) => {
     .then((response) => {
       return response.json();
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => err);
 };
 
 export const authenticate = (data, next) => {
@@ -53,9 +49,7 @@ export const signout = (next) => {
       method: "GET",
     })
       .then((response) => console.log("signout ", response))
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => err);
   }
 };
 

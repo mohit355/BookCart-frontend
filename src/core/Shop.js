@@ -119,13 +119,18 @@ const Shop = () => {
         <div className="col-8">
           <h2 className="mb-4">Products</h2>
           <div className="row">
-            {filteredResults.map((product, index) => (
-              <div key={index} className="col-4 mb-3">
-                <Card product={product}></Card>
-              </div>
-            ))}
+            {filteredResults && filteredResults.length > 0
+              ? filteredResults.map((product, index) => (
+                  <div key={index} className="col-4 mb-3">
+                    <Card product={product}></Card>
+                  </div>
+                ))
+              : null}
           </div>
           <hr />
+          {filteredResults && filteredResults.length === 0 && (
+            <h6>No products found</h6>
+          )}
           {loadMoreButton}
         </div>
       </div>
